@@ -22,7 +22,7 @@ I hold a **First-Class B.Sc. in Computer Science** and specialize in building **
 - **Solution**: Wrote a PowerShell script to automate account creation & license assignment.  
 - **Outcome**: Reduced onboarding time by 50%.  
 - **Tech Used**: PowerShell, Microsoft 365  
-- [View Code](#)
+- [View Code](https://github.com/Abizzytech/portfolio/blob/main/Powershell%20for%20user%20creation)
 
 ---
 
