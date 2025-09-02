@@ -1,0 +1,41 @@
+# ================================
+# PowerShell Script: M365 User Creation & License Assignment
+# Author: Oluwaseyi Okoroh
+# ================================
+
+# Import the Microsoft Graph module
+Import-Module Microsoft.Graph.Users
+
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "User.ReadWrite.All", "Directory.ReadWrite.All"
+
+# Define license SKU (replace with your tenant license SKU)
+# Example: ENTERPRISEPACK = Office 365 E3
+$licenseSku = (Get-MgSubscribedSku | Where-Object SkuPartNumber -eq "ENTERPRISEPACK").SkuId
+
+# Import users from CSV
+# CSV Format: DisplayName,UserPrincipalName,MailNickname,Password
+$users = Import-Csv "C:\M365Users.csv"
+
+foreach ($user in $users) {
+    try {
+        Write-Host "Creating account for $($user.DisplayName) ..." -ForegroundColor Cyan
+
+        # Create new user
+        $newUser = New-MgUser -AccountEnabled $true `
+            -DisplayName $user.DisplayName `
+            -MailNickname $user.MailNickname `
+            -UserPrincipalName $user.UserPrincipalName `
+            -PasswordProfile @{Password = $user.Password; ForceChangePasswordNextSignIn = $true}
+
+        Write-Host "✅ Created user: $($user.UserPrincipalName)" -ForegroundColor Green
+
+        # Assign license
+        Set-MgUserLicense -UserId $newUser.Id -AddLicenses @{SkuId = $licenseSku} -RemoveLicenses @()
+
+        Write-Host "🎯 License assigned to $($user.UserPrincipalName)" -ForegroundColor Yellow
+    }
+    catch {
+        Write-Host "❌ Failed to create $($user.DisplayName): $_" -ForegroundColor Red
+    }
+}
