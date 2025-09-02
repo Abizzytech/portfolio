@@ -1,4 +1,4 @@
-# 👋 Hi, I’m Oluwaseyi Okoroh
+# 👋 Hi, I’m Abigail Oluwaseyi Odaudu 
 
 I’m an IT Professional with expertise in **Microsoft 365 Administration, Technical Support, and Data Analytics**.  
 I hold a **First-Class B.Sc. in Computer Science** and specialize in building **automation scripts, data-driven solutions, and scalable systems**.
