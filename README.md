@@ -77,5 +77,5 @@ I hold a **First-Class B.Sc. in Computer Science** and specialize in building **
 - ✉️ oluwaseyiokorh@gmail.com  
 - 🔗 [LinkedIn](https://www.linkedin.com/in/abigail-odaudu-168188192/)  
 - 💻 [GitHub](https://github.com/Abizzytech/portfolio)  
-- 📄 [Download CV] (# file:///C:/Users/Abigail/Desktop/Desktop/Documents/Abigail%20Odaudu%202025.pdf)  
+- 📄 [Download CV] (file:///C:/Users/Abigail/Desktop/Desktop/Documents/Abigail%20Odaudu%202025.pdf)  
 
